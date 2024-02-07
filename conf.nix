@@ -102,7 +102,6 @@
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
-    tailscale
     curl
   ];
 
@@ -124,7 +123,7 @@ services.openssh = {
   settings.KbdInteractiveAuthentication = false;
   #settings.PermitRootLogin = "yes";
 };
-
+services.tailscale.enable = true;
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
