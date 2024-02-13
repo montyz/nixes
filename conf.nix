@@ -48,6 +48,7 @@
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
+  services.gnome.gnome-remote-desktop.enable = true;  
   services.xserver.displayManager.gdm.autoSuspend = false;
   security.polkit.extraConfig = ''
     polkit.addRule(function(action, subject) {
@@ -144,9 +145,13 @@ services.tailscale.enable = true;
     # require enabling PolKit integration on some desktop environments (e.g. Plasma).
     polkitPolicyOwners = [ "yourUsernameHere" ];
   };
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
+  ## Open ports in the firewall.
+  networking.firewall = {
+    enable = true;
+    trustedInterfaces = [ "tailscale0" ];
+    allowedUDPPorts = [ config.services.tailscale.port 22 ];
+    allowedTCPPorts = [ 22 ]; 
+  };
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
