@@ -7,7 +7,7 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+      ./mac-mini-2012-hardware-configuration.nix
     ];
 
   # Bootloader.
