@@ -23,6 +23,7 @@
             }
             {
                 age.secrets.nextcloud_admin_pass.file = ./nextcloud_admin_pass.age;
+                age.secrets.nextcloud_admin_pass.owner = "nextcloud";
             }
             ./nextcloud.nix
           ];
