@@ -12,8 +12,6 @@
     in {
       nixosConfigurations = {
         nix0 = lib.nixosSystem {
-          programs.kitty.enable = true;
-
           system = "x86_64-linux";
           modules = [ 
             ./conf.nix 
@@ -21,6 +19,7 @@
             {
                 environment.systemPackages = [ 
                     agenix.packages.x86_64-linux.default 
+                    nixpkgs.package.kitty
                 ];
             }
           ];

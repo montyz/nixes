@@ -138,6 +138,7 @@ services.openssh = {
   #settings.PermitRootLogin = "yes";
 };
 services.tailscale.enable = true;
+programs.kitty.enable = true;
   programs._1password.enable = true;
   programs._1password-gui = {
     enable = true;
