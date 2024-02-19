@@ -7,5 +7,6 @@ let
 in
 {
   "nextcloud_admin_pass.age".publicKeys = [ monty nix0 ];
+  "nextcloud_admin_pass.owner" = "nextcloud";
   #"secret2.age".publicKeys = users ++ systems;
 }
