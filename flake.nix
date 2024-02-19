@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-23.11";
+    agenix.url = "github:ryantm/agenix";
   };
 
   outputs = { self, nixpkgs, ... }:
@@ -12,7 +13,10 @@
       nixosConfigurations = {
         nix0 = lib.nixosSystem {
           system = "x86_64-linux";
-          modules = [ ./conf.nix ];
+          modules = [ 
+            ./conf.nix 
+            agenix.nixosModules.default
+          ];
       };
     };
   };

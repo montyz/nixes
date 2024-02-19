@@ -1,28 +1,10 @@
 { self, config, lib, pkgs, ... }: {
   # Based on https://carjorvaz.com/posts/the-holy-grail-nextcloud-setup-made-easy-by-nixos/
-  security.acme = {
-    acceptTerms = true;
-    defaults = {
-      email = "monty@codetransform.com";
-      dnsProvider = "easydns";
-      # location of your CLOUDFLARE_DNS_API_TOKEN=[value]
-      # https://www.freedesktop.org/software/systemd/man/latest/systemd.exec.html#EnvironmentFile=
-      environmentFile = "/REPLACE/WITH/YOUR/PATH";
-    };
-  };
   services = {
-    nginx.virtualHosts = {
-      "YOUR.DOMAIN.NAME" = {
-        forceSSL = true;
-        enableACME = true;
-        # Use DNS Challenege.
-        acmeRoot = null;
-      };
-    };
-    # 
+    
     nextcloud = {
       enable = true;
-      hostName = "YOUR.DOMAIN.NAME";
+      hostName = "nix0.local";
       # Need to manually increment with every major upgrade.
       package = pkgs.nextcloud28;
       # Let NixOS install and configure the database automatically.
