@@ -6,6 +6,6 @@ let
   systems = [ nix0 ];
 in
 {
-  "secret1.age".publicKeys = [ monty nix0 ];
-  "secret2.age".publicKeys = users ++ systems;
+  "nextcloud-admin-pass.age".publicKeys = [ monty nix0 ];
+  #"secret2.age".publicKeys = users ++ systems;
 }
