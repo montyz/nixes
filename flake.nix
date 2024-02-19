@@ -19,7 +19,7 @@
             {
                 environment.systemPackages = [ 
                     agenix.packages.x86_64-linux.default 
-                    nixpkgs.pkgs.kitty
+                    nixpkgs.package.kitty
                 ];
             }
           ];
