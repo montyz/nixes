@@ -6,7 +6,7 @@
     agenix.url = "github:ryantm/agenix";
   };
 
-  outputs = { self, nixpkgs, ... }:
+  outputs = { self, nixpkgs, agenix, ... }:
     let
       lib = nixpkgs.lib;
     in {
