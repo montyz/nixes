@@ -117,6 +117,7 @@
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
     curl
+    kitty
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -138,7 +139,6 @@ services.openssh = {
   #settings.PermitRootLogin = "yes";
 };
 services.tailscale.enable = true;
-programs.kitty.enable = true;
   programs._1password.enable = true;
   programs._1password-gui = {
     enable = true;
