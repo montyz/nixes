@@ -21,6 +21,9 @@
                     agenix.packages.x86_64-linux.default 
                 ];
             }
+            {
+                age.secrets.nextcloud_admin_pass.file = nextcloud_admin_pass.age;
+            }
           ];
       };
     };

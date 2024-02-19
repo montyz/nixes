@@ -33,7 +33,7 @@
         defaultPhoneRegion = "US";
         dbtype = "pgsql";
         adminuser = "admin";
-        adminpassFile = "/REPLACE/WITH/YOUR/PATH";
+        adminpassFile = config.age.secrets.nextcloud_admin_pass.path;
       };
       # Suggested by Nextcloud's health check.
       phpOptions."opcache.interned_strings_buffer" = "16";
