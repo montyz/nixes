@@ -15,7 +15,7 @@
     };
     nextcloud = {
       enable = true;
-      hostName = "nextcloud.home";
+      hostName = "nix0.local";
       # Need to manually increment with every major upgrade.
       package = pkgs.nextcloud28;
       # Let NixOS install and configure the database automatically.
