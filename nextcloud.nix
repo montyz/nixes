@@ -16,7 +16,7 @@
     };
     nextcloud = {
       enable = true;
-      hostName = "nix0.local";
+      hostName = "nix0";
       # Need to manually increment with every major upgrade.
       package = pkgs.nextcloud28;
       # Let NixOS install and configure the database automatically.
@@ -53,7 +53,7 @@
       phpOptions."opcache.interned_strings_buffer" = "16";
     };
 
-    nginx.virtualHosts."nix0.local" = {
+    nginx.virtualHosts.nix0 = {
       forceSSL = true;
       enableACME = true;
     };
