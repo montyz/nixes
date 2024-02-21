@@ -53,11 +53,6 @@
       phpOptions."opcache.interned_strings_buffer" = "16";
     };
 
-    nginx.virtualHosts.nix0 = {
-      forceSSL = true;
-      enableACME = true;
-    };
-
     # Nightly database backups.
     postgresqlBackup = {
       enable = true;
