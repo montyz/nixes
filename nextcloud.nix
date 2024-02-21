@@ -46,8 +46,8 @@
         dbtype = "pgsql";
         adminuser = "admin";
         adminpassFile = config.age.secrets.nextcloud_admin_pass.path;
-        trustedProxies = [ "localhost" "127.0.0.1" "100.116.112.27" "nix0.local" "nix0"];
-        extraTrustedDomains = [ "nix0.local" "100.116.112.27" "nix0" ];
+        trustedProxies = [ "nix0" "100.116.112.27" ];
+        extraTrustedDomains = [ "nix0" "100.116.112.27" ];
       };
       # Suggested by Nextcloud's health check.
       phpOptions."opcache.interned_strings_buffer" = "16";
