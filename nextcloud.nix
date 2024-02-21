@@ -51,6 +51,11 @@
       # Suggested by Nextcloud's health check.
       phpOptions."opcache.interned_strings_buffer" = "16";
     };
+    nginx.virtualHosts.${config.services.nextcloud.hostName} = {
+      forceSSL = true;
+      enableACME = true;
+    };
+
     # Nightly database backups.
     postgresqlBackup = {
       enable = true;
