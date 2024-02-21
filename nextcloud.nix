@@ -53,7 +53,7 @@
       phpOptions."opcache.interned_strings_buffer" = "16";
     };
 
-    nginx.virtualHosts.${config.services.nextcloud.hostName} = {
+    nginx.virtualHosts."nix0.local" = {
       forceSSL = true;
       enableACME = true;
     };
