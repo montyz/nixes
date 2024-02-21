@@ -1,4 +1,5 @@
 { self, config, lib, pkgs, ... }: {
+  security.acme.acceptTerms = true
   # Based on https://carjorvaz.com/posts/the-holy-grail-nextcloud-setup-made-easy-by-nixos/
   services = {
     avahi = {
@@ -51,6 +52,7 @@
       # Suggested by Nextcloud's health check.
       phpOptions."opcache.interned_strings_buffer" = "16";
     };
+
     nginx.virtualHosts.${config.services.nextcloud.hostName} = {
       forceSSL = true;
       enableACME = true;
