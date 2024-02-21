@@ -1,5 +1,5 @@
 { self, config, lib, pkgs, ... }: {
-  security.acme.acceptTerms = true
+  security.acme.acceptTerms = true;
   # Based on https://carjorvaz.com/posts/the-holy-grail-nextcloud-setup-made-easy-by-nixos/
   services = {
     avahi = {
