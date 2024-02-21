@@ -16,7 +16,7 @@
     };
     nextcloud = {
       enable = true;
-      hostName = "192.168.98.20";
+      hostName = "nix0";
       # Need to manually increment with every major upgrade.
       package = pkgs.nextcloud28;
       # Let NixOS install and configure the database automatically.
@@ -47,7 +47,7 @@
         adminuser = "admin";
         adminpassFile = config.age.secrets.nextcloud_admin_pass.path;
         #trustedProxies = [ "nix0" "100.116.112.27" ];
-        #extraTrustedDomains = [ "nix0" "100.116.112.27" ];
+        extraTrustedDomains = [ "nix0" "100.116.112.27" ];
       };
       # Suggested by Nextcloud's health check.
       phpOptions."opcache.interned_strings_buffer" = "16";
