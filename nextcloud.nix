@@ -14,6 +14,20 @@
         workstation = true;
         };
     };
+    nginx.virtualHosts = {
+      "nix0" = {
+        forceSSL = true;
+        # enableACME = true;
+        # Use DNS Challenege.
+        # acmeRoot = null;
+      };
+      "100.116.112.27" = {
+        forceSSL = true;
+        # enableACME = true;
+        # Use DNS Challenege.
+        # acmeRoot = null;
+      };
+    };
     nextcloud = {
       enable = true;
       hostName = "nix0";
@@ -41,7 +55,7 @@
         };
       };
       config = {
-        # overwriteProtocol = "https";
+        overwriteProtocol = "https";
         defaultPhoneRegion = "US";
         dbtype = "pgsql";
         adminuser = "admin";
