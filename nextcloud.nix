@@ -46,7 +46,7 @@
         dbtype = "pgsql";
         adminuser = "admin";
         adminpassFile = config.age.secrets.nextcloud_admin_pass.path;
-        #trustedProxies = [ "nix0" "100.116.112.27" ];
+        trustedProxies = [ "nix0" "100.116.112.27" ];
         # enabling the following changes the response from an error about trusted domains to connection_refused
         #extraTrustedDomains = [ "nix0" "100.116.112.27" ];
       };
