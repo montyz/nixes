@@ -1,5 +1,4 @@
 { self, config, lib, pkgs, ... }: {
-  security.acme.acceptTerms = true;
   age.secrets.easydns.file = ./easydns.age;
 
   # Based on https://carjorvaz.com/posts/the-holy-grail-nextcloud-setup-made-easy-by-nixos/
@@ -23,7 +22,7 @@
       dnsProvider = "easyDNS";
       # location of your CLOUDFLARE_DNS_API_TOKEN=[value]
       # https://www.freedesktop.org/software/systemd/man/latest/systemd.exec.html#EnvironmentFile=
-      # environmentFile = config.age.secrets.easydns.path;
+      environmentFile = config.age.secrets.easydns.path;
     };
   };
     nginx.virtualHosts = {
