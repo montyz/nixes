@@ -3,7 +3,7 @@
     acceptTerms = true;
     defaults = {
       email = "monty@washdish.com";
-      dnsProvider = "easyDNS";
+      dnsProvider = "easydns";
       # location of your CLOUDFLARE_DNS_API_TOKEN=[value]
       # https://www.freedesktop.org/software/systemd/man/latest/systemd.exec.html#EnvironmentFile=
       # environmentFile = config.age.secrets.easydns.path;
