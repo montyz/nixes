@@ -1,6 +1,4 @@
 { self, config, lib, pkgs, ... }: {
-  age.secrets.easydns.file = ./easydns.age;
-
   # Based on https://carjorvaz.com/posts/the-holy-grail-nextcloud-setup-made-easy-by-nixos/
   services = {
     avahi = {
