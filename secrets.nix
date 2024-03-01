@@ -7,5 +7,6 @@ let
 in
 {
   "nextcloud_admin_pass.age".publicKeys = [ monty nix0 ];
-  #"secret2.age".publicKeys = users ++ systems;
+  "easydns.token.age".publicKeys = [ monty nix0 ];
+  "easydns.key.age".publicKeys = [ monty nix0 ];
 }

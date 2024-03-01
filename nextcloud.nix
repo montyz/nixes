@@ -14,23 +14,27 @@
         workstation = true;
         };
     };
+    security.acme = {
+    acceptTerms = true;
+    defaults = {
+      email = "monty@washdish.com";
+      dnsProvider = "easyDNS";
+      # location of your CLOUDFLARE_DNS_API_TOKEN=[value]
+      # https://www.freedesktop.org/software/systemd/man/latest/systemd.exec.html#EnvironmentFile=
+      environmentFile = "/REPLACE/WITH/YOUR/PATH";
+    };
+  };
     nginx.virtualHosts = {
-      "nix0" = {
+      "nc.washdish.com" = {
         forceSSL = true;
-        # enableACME = true;
+        enableACME = true;
         # Use DNS Challenege.
-        # acmeRoot = null;
-      };
-      "100.116.112.27" = {
-        forceSSL = true;
-        # enableACME = true;
-        # Use DNS Challenege.
-        # acmeRoot = null;
+        acmeRoot = null;
       };
     };
     nextcloud = {
       enable = true;
-      hostName = "nix0";
+      hostName = "nc.washdish.com";
       # Need to manually increment with every major upgrade.
       package = pkgs.nextcloud28;
       # Let NixOS install and configure the database automatically.
@@ -60,9 +64,8 @@
         dbtype = "pgsql";
         adminuser = "admin";
         adminpassFile = config.age.secrets.nextcloud_admin_pass.path;
-        trustedProxies = [ "100.116.112.27" ];
-        # enabling the following changes the response from an error about trusted domains to connection_refused
-        extraTrustedDomains = [ "100.116.112.27" ];
+        trustedProxies = [ "nc.washdish.com" ];
+        # ?extraTrustedDomains = [ "nc.washdish.com" ];
       };
       # Suggested by Nextcloud's health check.
       phpOptions."opcache.interned_strings_buffer" = "16";
