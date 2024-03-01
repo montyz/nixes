@@ -7,6 +7,6 @@ let
   systems = [ nix0 ];
 in
 {
-  "nextcloud_admin_pass.age".publicKeys = [ monty nix0 ];
-  "easydns.age".publicKeys = [ monty nix0 ];
+  "nextcloud_admin_pass.age".publicKeys = [ monty montynix0 nix0 ];
+  "easydns.age".publicKeys = [ monty montynix0 nix0 ];
 }
