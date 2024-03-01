@@ -1,5 +1,14 @@
 { self, config, lib, pkgs, ... }: {
-  security.acme.acceptTerms = true;
+  security.acme = {
+    acceptTerms = true;
+    defaults = {
+      email = "monty@washdish.com";
+      dnsProvider = "easyDNS";
+      # location of your CLOUDFLARE_DNS_API_TOKEN=[value]
+      # https://www.freedesktop.org/software/systemd/man/latest/systemd.exec.html#EnvironmentFile=
+      # environmentFile = config.age.secrets.easydns.path;
+    };
+  };
   
   # Based on https://carjorvaz.com/posts/the-holy-grail-nextcloud-setup-made-easy-by-nixos/
   services = {
@@ -15,16 +24,6 @@
         workstation = true;
         };
     };
-    security.acme = {
-    acceptTerms = true;
-    defaults = {
-      email = "monty@washdish.com";
-      dnsProvider = "easyDNS";
-      # location of your CLOUDFLARE_DNS_API_TOKEN=[value]
-      # https://www.freedesktop.org/software/systemd/man/latest/systemd.exec.html#EnvironmentFile=
-      # environmentFile = config.age.secrets.easydns.path;
-    };
-  };
     nginx.virtualHosts = {
       "nc.washdish.com" = {
         forceSSL = true;
