@@ -26,7 +26,7 @@
                 age.secrets.nextcloud_admin_pass.owner = "nextcloud";
                 age.secrets.easydns.file = ./easydns.age;
             }
-            ./nextcloud.nix
+            # ./nextcloud.nix
           ];
       };
     };
