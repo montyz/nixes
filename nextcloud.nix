@@ -9,7 +9,6 @@
       environmentFile = config.age.secrets.easydns.path;
     };
   };
-  environment.etc."nextcloud-admin-pass".text = "test123";
   # Based on https://carjorvaz.com/posts/the-holy-grail-nextcloud-setup-made-easy-by-nixos/
   services = {
     nginx.virtualHosts = {
@@ -50,10 +49,10 @@
         overwriteProtocol = "https";
         defaultPhoneRegion = "US";
         dbtype = "pgsql";
-        # adminuser = "admin";
-        adminpassFile = "/etc/nextcloud-admin-pass";
+        adminuser = "admin";
+        adminpassFile = config.age.secrets.nextcloud_admin_pass.path;
         trustedProxies = [ "nc.washdish.com" ];
-        # ?extraTrustedDomains = [ "nc.washdish.com" ];
+        extraTrustedDomains = [ "100.116.112.27" ];
       };
       # Suggested by Nextcloud's health check.
       phpOptions."opcache.interned_strings_buffer" = "16";
