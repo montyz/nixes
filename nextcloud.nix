@@ -9,7 +9,7 @@
       environmentFile = config.age.secrets.easydns.path;
     };
   };
-  
+  environment.etc."nextcloud-admin-pass".text = "test123";
   # Based on https://carjorvaz.com/posts/the-holy-grail-nextcloud-setup-made-easy-by-nixos/
   services = {
     avahi = {
@@ -62,8 +62,8 @@
         overwriteProtocol = "https";
         defaultPhoneRegion = "US";
         dbtype = "pgsql";
-        adminuser = "admin";
-        adminpassFile = config.age.secrets.nextcloud_admin_pass.path;
+        # adminuser = "admin";
+        adminpassFile = "/etc/nextcloud-admin-pass";
         trustedProxies = [ "nc.washdish.com" ];
         # ?extraTrustedDomains = [ "nc.washdish.com" ];
       };
