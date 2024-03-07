@@ -4,15 +4,20 @@
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-23.11";
     agenix.url = "github:ryantm/agenix";
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, agenix, ... }:
+  outputs = { self, nixpkgs, agenix, home-manager, ... }:
     let
       lib = nixpkgs.lib;
     in {
       nixosConfigurations = {
         nix0 = lib.nixosSystem {
           system = "x86_64-linux";
+          defaultPackage.${system} = home-manager.defaultPackage.${system};
           modules = [ 
             ./conf.nix 
             agenix.nixosModules.default
@@ -28,6 +33,10 @@
             }
             ./nextcloud.nix
             ./plex.nix
+            homeConfigurations.monty = home-manager.lib.homeManagerConfiguration {
+              pkgs = nixpkgs.legacyPackages.${system};
+              modules = [ ./home.nix ];
+            };
           ];
       };
     };
