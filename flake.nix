@@ -27,6 +27,11 @@
                 age.secrets.easydns.file = ./easydns.age;
             }
             ./nextcloud.nix
+            {
+              environment.systemPackages = [ 
+                    pkgs.plex 
+                ];
+            }
           ];
       };
     };

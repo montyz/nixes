@@ -50,7 +50,7 @@
         overwriteProtocol = "https";
         defaultPhoneRegion = "US";
         dbtype = "pgsql";
-        # adminuser = "admin";
+        adminuser = "admin";
         adminpassFile = "/etc/nextcloud-admin-pass";
         trustedProxies = [ "nc.washdish.com" ];
         # ?extraTrustedDomains = [ "nc.washdish.com" ];
