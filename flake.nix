@@ -29,7 +29,7 @@
             ./nextcloud.nix
             {
               environment.systemPackages = [ 
-                    pkgs.plex 
+                    nixpkgs.plex 
                 ];
             }
           ];
