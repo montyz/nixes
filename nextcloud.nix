@@ -50,11 +50,7 @@
         defaultPhoneRegion = "US";
         dbtype = "pgsql";
         adminuser = "admin";
-<<<<<<< HEAD
-        adminpassFile = "/etc/nextcloud-admin-pass";
-=======
         adminpassFile = config.age.secrets.nextcloud_admin_pass.path;
->>>>>>> c7f9a7ae3d1d893aaa952afa35adbda16099d8eb
         trustedProxies = [ "nc.washdish.com" ];
         extraTrustedDomains = [ "100.116.112.27" ];
       };
