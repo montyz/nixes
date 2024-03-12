@@ -13,10 +13,10 @@
   outputs = { self, nixpkgs, agenix, home-manager, ... }:
     let
       lib = nixpkgs.lib;
+      system = "x86_64-linux";
     in {
       nixosConfigurations = {
         nix0 = lib.nixosSystem {
-          system = "x86_64-linux";
           defaultPackage.${system} = home-manager.defaultPackage.${system};
           modules = [ 
             ./conf.nix 
