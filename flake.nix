@@ -33,12 +33,13 @@
             }
             ./nextcloud.nix
             ./plex.nix
-            homeConfigurations.monty = home-manager.lib.homeManagerConfiguration {
-              pkgs = nixpkgs.legacyPackages.${system};
-              modules = [ ./home.nix ];
-            };
           ];
       };
     };
+    homeConfigurations.monty = home-manager.lib.homeManagerConfiguration {
+      pkgs = nixpkgs.legacyPackages.${system};
+      modules = [ ./home.nix ];
+    };
+
   };
 }
