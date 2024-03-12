@@ -131,14 +131,14 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-services.openssh = {
-  enable = true;
-  # require public key authentication for better security
-  settings.PasswordAuthentication = false;
-  settings.KbdInteractiveAuthentication = false;
-  #settings.PermitRootLogin = "yes";
-};
-services.tailscale.enable = true;
+  services.openssh = {
+    enable = true;
+    # require public key authentication for better security
+    settings.PasswordAuthentication = false;
+    settings.KbdInteractiveAuthentication = false;
+    #settings.PermitRootLogin = "yes";
+  };
+  services.tailscale.enable = true;
   programs._1password.enable = true;
   programs._1password-gui = {
     enable = true;
