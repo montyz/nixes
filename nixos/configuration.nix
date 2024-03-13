@@ -15,6 +15,20 @@
 
     # You can also split up your configuration and import pieces of it here:
     # ./users.nix
+    agenix.nixosModules.default
+    {
+        environment.systemPackages = [ 
+            agenix.packages.x86_64-linux.default 
+        ];
+    }
+    {
+        age.secrets.nextcloud_admin_pass.file = ./nextcloud_admin_pass.age;
+        age.secrets.nextcloud_admin_pass.owner = "nextcloud";
+        age.secrets.easydns.file = ./easydns.age;
+    }
+    ./nextcloud.nix
+    ./plex.nix
+
 
     # Import your generated (nixos-generate-config) hardware configuration
     ./mac-mini-2012-hardware-configuration.nix
