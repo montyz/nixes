@@ -28,7 +28,7 @@
     }
     ./nextcloud.nix
     ./plex.nix
-
+    ./jellyfin.nix
 
     # Import your generated (nixos-generate-config) hardware configuration
     ./mac-mini-2012-hardware-configuration.nix
