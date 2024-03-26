@@ -15,19 +15,7 @@
 
     # You can also split up your configuration and import pieces of it here:
     # ./users.nix
-    agenix.url = "github:ryantm/agenix";
 
-    agenix.nixosModules.default
-    {
-        environment.systemPackages = [ 
-            agenix.packages.x86_64-linux.default 
-        ];
-    }
-    {
-        age.secrets.nextcloud_admin_pass.file = ./nextcloud_admin_pass.age;
-        age.secrets.nextcloud_admin_pass.owner = "nextcloud";
-        age.secrets.easydns.file = ./easydns.age;
-    }
     ./nextcloud.nix
     ./plex.nix
     ./jellyfin.nix
@@ -79,6 +67,17 @@
   };
 
   # FIXME: Add the rest of your current configuration
+    agenix.nixosModules.default
+    {
+        environment.systemPackages = [ 
+            agenix.packages.x86_64-linux.default 
+        ];
+    }
+    {
+        age.secrets.nextcloud_admin_pass.file = ./nextcloud_admin_pass.age;
+        age.secrets.nextcloud_admin_pass.owner = "nextcloud";
+        age.secrets.easydns.file = ./easydns.age;
+    }
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
