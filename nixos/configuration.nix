@@ -67,7 +67,7 @@
   };
 
   # FIXME: Add the rest of your current configuration
-    agenix.nixosModules.default
+    agenix.nixosModules.default =
     {
         environment.systemPackages = [ 
             agenix.packages.x86_64-linux.default 
@@ -78,6 +78,7 @@
         age.secrets.nextcloud_admin_pass.owner = "nextcloud";
         age.secrets.easydns.file = ./easydns.age;
     }
+
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
