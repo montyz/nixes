@@ -15,7 +15,7 @@
 
     # You can also split up your configuration and import pieces of it here:
     # ./users.nix
-
+    agenix.url = "github:ryantm/agenix";
     ./nextcloud.nix
     ./plex.nix
     ./jellyfin.nix
