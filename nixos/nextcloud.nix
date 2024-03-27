@@ -1,4 +1,4 @@
-{ self, config, lib, pkgs, agenix ... }: {
+{ self, config, lib, pkgs, agenix, ... }: {
       agenix.nixosModules.default =
     {
         environment.systemPackages = [ 
