@@ -24,12 +24,6 @@
   } @ inputs: let
     inherit (self) outputs;
   in {
-    agenix.nixosModules.default =
-    {
-        environment.systemPackages = [ 
-            agenix.packages.x86_64-linux.default 
-        ];
-    };
         
     # NixOS configuration entrypoint
     # Available through 'nixos-rebuild --flake .#nix0'
