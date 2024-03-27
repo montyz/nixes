@@ -1,4 +1,7 @@
 { self, config, lib, pkgs, ... }: {
+  age.secrets.nextcloud_admin_pass.file = ./nextcloud_admin_pass.age;
+  age.secrets.nextcloud_admin_pass.owner = "nextcloud";
+  age.secrets.easydns.file = ./easydns.age;
   security.acme = {
     acceptTerms = true;
     defaults = {
@@ -9,9 +12,6 @@
       environmentFile = config.age.secrets.easydns.path;
     };
   };
-  age.secrets.nextcloud_admin_pass.file = ./nextcloud_admin_pass.age;
-  age.secrets.nextcloud_admin_pass.owner = "nextcloud";
-  age.secrets.easydns.file = ./easydns.age;
 
   # Based on https://carjorvaz.com/posts/the-holy-grail-nextcloud-setup-made-easy-by-nixos/
   services = {
