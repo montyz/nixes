@@ -1,8 +1,8 @@
-{ self, config, lib, pkgs, agenix, ... }: {
+{ self, config, lib, pkgs, ... }: {
   imports = [
     agenix.nixosModules.default
   ];
-  
+
   environment.systemPackages = [ agenix.packages.x86_64-linux.default ];
     
   age.secrets.nextcloud_admin_pass.file = ./nextcloud_admin_pass.age;

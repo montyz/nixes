@@ -11,15 +11,12 @@
 
     # TODO: Add any other flake you might need
     # hardware.url = "github:nixos/nixos-hardware";
-
-    # agenix.url = "github:ryantm/agenix";
   };
 
   outputs = {
     self,
     nixpkgs,
     home-manager,
-    # agenix,
     ...
   } @ inputs: let
     inherit (self) outputs;
