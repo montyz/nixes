@@ -1,8 +1,4 @@
-{ self, config, lib, pkgs, ... }: {
-  inputs.agenix.url = "github:ryantm/agenix";
-  imports = [
-    agenix.nixosModules.default
-  ];
+{ self, config, lib, pkgs, agenix ... }: {
 
   environment.systemPackages = [ agenix.packages.x86_64-linux.default ];
     
