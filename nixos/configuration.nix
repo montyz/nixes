@@ -5,7 +5,7 @@
   lib,
   config,
   pkgs,
-  agenix,
+  # agenix,
   ...
 }: {
   # You can import other NixOS modules here
