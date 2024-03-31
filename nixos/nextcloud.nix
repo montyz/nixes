@@ -1,7 +1,5 @@
 { self, config, lib, pkgs, ... }: {
-  inputs = [
-        agenix.url = "github:ryantm/agenix";
-  ];
+  agenix.url = "github:ryantm/agenix";
   imports = [
     agenix.nixosModules.default
   ];
