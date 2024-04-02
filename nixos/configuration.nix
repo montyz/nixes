@@ -76,7 +76,7 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
-  systemd.services.NetworkManager-wait-online.enable = false;
+  systemd.services.NetworkManager-wait-online.enable = false; # see https://discourse.nixos.org/t/how-to-disable-networkmanager-wait-online-service-in-the-configuration-file/19963
 
   # Set your time zone.
   time.timeZone = "America/Los_Angeles";
