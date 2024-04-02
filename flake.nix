@@ -29,7 +29,10 @@
     # Available through 'nixos-rebuild --flake .#nix0'
     nixosConfigurations = {
       nix0 = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs;};
+        specialArgs = {
+          inherit inputs outputs;
+          agenix = inputs.agenix;
+        };
         # > Our main nixos configuration file <
         modules = [./nixos/configuration.nix
           agenix.nixosModules.default
