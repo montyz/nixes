@@ -179,7 +179,7 @@
   };
   ## Open ports in the firewall.
   networking.firewall = {
-    enable = true;
+    enable = false;
     trustedInterfaces = [ "tailscale0" ];
     allowedUDPPorts = [ config.services.tailscale.port 22 ];
     allowedTCPPorts = [ 22 ]; 
