@@ -19,7 +19,7 @@
 
         avahi = {
             enable = true;
-            nssmdns = true;
+            nssmdns = false;
             openFirewall = true;
             publish = {
                 enable = true;
