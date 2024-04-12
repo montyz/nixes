@@ -27,5 +27,13 @@
             #     addresses = true;
             # };
         };
+        resolved = {
+            enable = true;
+            extraConfig = ''
+            LLMNR=no
+            ReadEtcHosts=no
+            DNSSEC=no
+            '';
+        };
     };
 }
