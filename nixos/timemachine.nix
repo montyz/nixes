@@ -19,21 +19,13 @@
 
         avahi = {
             enable = true;
-            # nssmdns = true;
-            # openFirewall = true;
-            # publish = {
-            #     enable = true;
-            #     userServices = true;
-            #     addresses = true;
-            # };
-        };
-        resolved = {
-            enable = true;
-            extraConfig = ''
-            LLMNR=no
-            ReadEtcHosts=no
-            DNSSEC=no
-            '';
+            nssmdns = true;
+            openFirewall = true;
+            publish = {
+                enable = true;
+                userServices = true;
+                addresses = true;
+            };
         };
     };
 }
