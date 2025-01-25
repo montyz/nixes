@@ -24,6 +24,7 @@
     pkgs.jq
     pkgs.just
     pkgs.ripgrep
+    pkgs.sshfs
     pkgs.tldr
     pkgs.tree
     pkgs.watch
