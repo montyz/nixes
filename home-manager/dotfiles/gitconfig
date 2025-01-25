@@ -1,0 +1,13 @@
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = /opt/1Password/op-ssh-sign
+	allowedSignersFile = /home/monty/.ssh/allowed_signers
+[commit]
+	gpgsign = true
+[user]
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINI6ZIBj10bzKpc5HiJ8TTar/e1C4Ghc17OQHHBErCHl
+	name = Monty Zukowski
+	email = monty@washdish.com
+[pull]
+	rebase = false

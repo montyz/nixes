@@ -1,59 +1,98 @@
-# This is your home-manager configuration file
-# Use this to configure your home environment (it replaces ~/.config/nixpkgs/home.nix)
-{
-  inputs,
-  lib,
-  config,
-  pkgs,
-  ...
-}: {
-  # You can import other home-manager modules here
-  imports = [
-    # If you want to use home-manager modules from other flakes (such as nix-colors):
-    # inputs.nix-colors.homeManagerModule
+{ config, pkgs, ... }:
 
-    # You can also split up your configuration and import pieces of it here:
-    # ./nvim.nix
+{
+  # Home Manager needs a bit of information about you and the paths it should
+  # manage.
+  home.username = "monty";
+  home.homeDirectory = "/home/monty";
+
+  # This value determines the Home Manager release that your configuration is
+  # compatible with. This helps avoid breakage when a new Home Manager release
+  # introduces backwards incompatible changes.
+  #
+  # You should not change this value, even if you update Home Manager. If you do
+  # want to update the value, then make sure to first check the Home Manager
+  # release notes.
+  home.stateVersion = "23.11"; # Please read the comment before changing.
+
+  home.packages = [
+    pkgs.bashInteractive
+    pkgs.curl
+    pkgs.eza
+    pkgs.fd
+    pkgs.gcal
+    pkgs.jq
+    pkgs.just
+    pkgs.ripgrep
+    pkgs.tldr
+    pkgs.tree
+    pkgs.watch
+    pkgs.wget
+    pkgs.ytfzf
+    pkgs.ueberzugpp
   ];
 
-  nixpkgs = {
-    # You can add overlays here
-    overlays = [
-      # If you want to use overlays exported from other flakes:
-      # neovim-nightly-overlay.overlays.default
+  # Home Manager is pretty good at managing dotfiles. The primary way to manage
+  # plain files is through 'home.file'.
+  home.file = {
+    # # Building this configuration will create a copy of 'dotfiles/screenrc' in
+    # # the Nix store. Activating the configuration will then make '~/.screenrc' a
+    # # symlink to the Nix store copy.
+    # ".screenrc".source = dotfiles/screenrc;
 
-      # Or define it inline, for example:
-      # (final: prev: {
-      #   hi = final.hello.overrideAttrs (oldAttrs: {
-      #     patches = [ ./change-hello-to-hi.patch ];
-      #   });
-      # })
-    ];
-    # Configure your nixpkgs instance
-    config = {
-      # Disable if you don't want unfree packages
-      allowUnfree = true;
-      # Workaround for https://github.com/nix-community/home-manager/issues/2942
-      allowUnfreePredicate = _: true;
+    # # You can also set the file content immediately.
+    # ".gradle/gradle.properties".text = ''
+    #   org.gradle.console=verbose
+    #   org.gradle.daemon.idletimeout=3600000
+    # '';
+  };
+
+  # Home Manager can also manage your environment variables through
+  # 'home.sessionVariables'. If you don't want to manage your shell through Home
+  # Manager then you have to manually source 'hm-session-vars.sh' located at
+  # either
+  #
+  #  ~/.nix-profile/etc/profile.d/hm-session-vars.sh
+  #
+  # or
+  #
+  #  ~/.local/state/nix/profiles/profile/etc/profile.d/hm-session-vars.sh
+  #
+  # or
+  #
+  #  /etc/profiles/per-user/monty/etc/profile.d/hm-session-vars.sh
+  #
+  home.sessionVariables = {
+    # EDITOR = "emacs";
+  };
+  # programs._1password.enable = true;
+  # programs._1password-gui = {
+  #   enable = true;
+  #   # Certain features, including CLI integration and system authentication support,
+  #   # require enabling PolKit integration on some desktop environments (e.g. Plasma).
+  #   polkitPolicyOwners = [ "monty" ];
+  # };
+  programs.git = {    
+    enable = true;
+    includes = [{ path = "~/.config/home-manager/dotfiles/gitconfig"; }];
+  };
+    programs.bash = {
+    enable = true;
+    #profileExtra = builtins.readFile dotfiles/bash_profile;
+    initExtra = builtins.readFile dotfiles/bashrc;
+  };
+    programs.fzf.enable = true;
+    programs.zoxide.enable = true;
+    programs.direnv = {    
+      enable = true;
+      nix-direnv.enable = true;
     };
-  };
-
-  home = {
-    username = "monty";
-    homeDirectory = "/home/monty";
-  };
-
-  # Add stuff for your user as you see fit:
-  # programs.neovim.enable = true;
-  # home.packages = with pkgs; [ steam ];
-
-  # Enable home-manager and git
+  # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-  programs.git.enable = true;
-
-  # Nicely reload system units when changing configs
-  systemd.user.startServices = "sd-switch";
-
-  # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  home.stateVersion = "23.05";
+  home.shellAliases = {
+    mov0 = ''
+      dir=$(find '.var/app/tv.plex.PlexDesktop/data/plex/Plex Media Server/Sync/1/1/' -path '*/\.*' -prune  -o -type d -print 2> /dev/null | fzf +m)
+      rsync --progress -v -a -e 'ssh -p 2222' "$dir" server0.local:/openssh/resilio/sync/movies/
+    '';
+  };
 }
