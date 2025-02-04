@@ -17,6 +17,7 @@
     pkgs.eza
     pkgs.fd
     pkgs.gcal
+    pkgs.htmlq
     pkgs.jq
     pkgs.just
     pkgs.ripgrep
