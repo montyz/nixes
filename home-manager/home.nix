@@ -13,6 +13,8 @@
 
   home.packages = [
     pkgs.bashInteractive
+    pkgs.bat
+    pkgs.bun
     pkgs.curl
     pkgs.eza
     pkgs.fd
@@ -20,6 +22,7 @@
     pkgs.htmlq
     pkgs.jq
     pkgs.just
+    pkgs.lout
     pkgs.ripgrep
     pkgs.sshfs
     pkgs.tldr
