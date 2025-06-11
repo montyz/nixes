@@ -10,6 +10,7 @@
   # want to update the value,  make sure to first check the Home Manager
   # release notes.
   home.stateVersion = "23.11"; # Please read the comment before changing.
+  fonts.fontconfig.enable = true;
 
   home.packages = [
     pkgs.bashInteractive
@@ -19,6 +20,7 @@
     pkgs.eza
     pkgs.fd
     pkgs.gcal
+    pkgs.google-fonts
     pkgs.htmlq
     pkgs.jq
     pkgs.just
@@ -31,21 +33,8 @@
     pkgs.wget
     pkgs.ytfzf
     pkgs.ueberzugpp
+
   ];
-
-fonts.packages = with pkgs; [
-  google-fonts
-  noto-fonts
-  noto-fonts-cjk-sans
-  noto-fonts-emoji
-  liberation_ttf
-  fira-code
-  fira-code-symbols
-  mplus-outline-fonts.githubRelease
-  dina-font
-  proggyfonts
-];
-
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
