@@ -33,6 +33,20 @@
     pkgs.ueberzugpp
   ];
 
+fonts.packages = with pkgs; [
+  google-fonts
+  noto-fonts
+  noto-fonts-cjk-sans
+  noto-fonts-emoji
+  liberation_ttf
+  fira-code
+  fira-code-symbols
+  mplus-outline-fonts.githubRelease
+  dina-font
+  proggyfonts
+];
+
+
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
