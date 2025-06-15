@@ -20,7 +20,7 @@
     pkgs.eza
     pkgs.fd
     pkgs.gcal
-    pkgs.google-fonts
+    # pkgs.google-fonts
     pkgs.htmlq
     pkgs.jq
     pkgs.just
