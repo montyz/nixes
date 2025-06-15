@@ -10,7 +10,7 @@
   # want to update the value,  make sure to first check the Home Manager
   # release notes.
   home.stateVersion = "23.11"; # Please read the comment before changing.
-  fonts.fontconfig.enable = true;
+  # fonts.fontconfig.enable = true;
 
   home.packages = [
     pkgs.bashInteractive
