@@ -18,6 +18,7 @@
     pkgs.curl
     pkgs.eza
     pkgs.fd
+    pkgs.fontforge
     pkgs.gcal
     pkgs.htmlq
     pkgs.jq
