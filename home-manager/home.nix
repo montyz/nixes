@@ -21,7 +21,7 @@
     pkgs.fd
     pkgs.fontforge
     pkgs.gcal
-    pkgs.google-fonts
+    # pkgs.google-fonts
     pkgs.htmlq
     pkgs.jq
     pkgs.just
