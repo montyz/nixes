@@ -26,6 +26,7 @@
     pkgs.jq
     pkgs.just
     pkgs.lout
+    pkgs.nodejs_22
     pkgs.ripgrep
     pkgs.sshfs
     pkgs.tldr
