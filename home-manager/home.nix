@@ -19,6 +19,7 @@
     pkgs.curl
     pkgs.eza
     pkgs.fd
+    pkgs.fig2dev
     pkgs.fontforge
     pkgs.gcal
     # pkgs.google-fonts # seems to mess up title and menubar for postscript preview app
@@ -27,6 +28,7 @@
     pkgs.just
     pkgs.lout
     pkgs.nodejs_22
+    pkgs.pstoedit
     pkgs.ripgrep
     pkgs.sshfs
     pkgs.tldr
