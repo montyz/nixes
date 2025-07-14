@@ -22,6 +22,7 @@
     pkgs.fig2dev
     pkgs.fontforge
     pkgs.gcal
+    pkgs.gcalcli
     # pkgs.google-fonts # seems to mess up title and menubar for postscript preview app
     pkgs.htmlq
     pkgs.jq
@@ -29,6 +30,7 @@
     pkgs.lout
     pkgs.nodejs_22
     pkgs.pstoedit
+    pkgs.python313Packages.gtts
     pkgs.ripgrep
     pkgs.sshfs
     pkgs.tldr
