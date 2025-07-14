@@ -23,6 +23,7 @@
     pkgs.fontforge
     pkgs.gcal
     pkgs.gcalcli
+    pkgs.gmailctl
     # pkgs.google-fonts # seems to mess up title and menubar for postscript preview app
     pkgs.htmlq
     pkgs.jq
