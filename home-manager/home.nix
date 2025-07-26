@@ -75,6 +75,7 @@
   #  /etc/profiles/per-user/monty/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
+    LPDEST = EPSON_ET_8500_Series;
     # EDITOR = "emacs";
   };
   # programs._1password.enable = true;
