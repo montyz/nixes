@@ -30,6 +30,7 @@
     pkgs.just
     pkgs.lout
     pkgs.nodejs_22
+    pkgs.noweb
     pkgs.php
     pkgs.pstoedit
     pkgs.python313Packages.gtts
