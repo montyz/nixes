@@ -17,6 +17,8 @@
     pkgs.bat
     pkgs.bun
     pkgs.curl
+    pkgs.docker
+    pkgs.docker-compose
     pkgs.eza
     pkgs.fd
     pkgs.fig2dev
@@ -24,6 +26,7 @@
     pkgs.gcal
     pkgs.gcalcli
     pkgs.gmailctl
+    pkgs.gnumake
     # pkgs.google-fonts # seems to mess up title and menubar for postscript preview app
     pkgs.htmlq
     pkgs.jq
