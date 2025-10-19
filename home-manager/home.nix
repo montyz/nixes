@@ -29,6 +29,7 @@
     pkgs.gmailctl
     pkgs.gnumake
     # pkgs.google-fonts # seems to mess up title and menubar for postscript preview app
+    pkgs.helix
     pkgs.htmlq
     pkgs.jq
     pkgs.just
