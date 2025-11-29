@@ -13,6 +13,7 @@
   # fonts.fontconfig.enable = true;
 
   home.packages = [
+    pkgs.abcde
     pkgs.ansible
     pkgs.bashInteractive
     pkgs.bat
