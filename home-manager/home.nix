@@ -47,6 +47,7 @@
     pkgs.watch
     pkgs.wget
     pkgs.ytfzf
+    pkgs.yt-dlp
     pkgs.ueberzugpp
 
   ];
