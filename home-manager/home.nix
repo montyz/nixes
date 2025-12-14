@@ -41,7 +41,6 @@
     pkgs.pstoedit
     pkgs.python313Packages.gtts
     pkgs.ripgrep
-    pkgs.sanoid
     pkgs.sshfs
     pkgs.tldr
     pkgs.tree
