@@ -1,5 +1,8 @@
 update:
 	home-manager switch --flake .#monty
 
+update-channel:
+	sudo -i nix-channel --update
+
 clean:
 	nix-collect-garbage -d
