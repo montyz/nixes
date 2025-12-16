@@ -6,3 +6,4 @@ update-channel:
 
 clean:
 	nix-collect-garbage -d
+
