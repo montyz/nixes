@@ -49,6 +49,7 @@
     pkgs.ytfzf
     pkgs.yt-dlp
     pkgs.ueberzugpp
+    pkgs.uv
 
   ];
 
