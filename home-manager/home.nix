@@ -50,7 +50,7 @@
     pkgs.yt-dlp
     pkgs.ueberzugpp
     pkgs.uv
-
+    pkgs.zoxide
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
