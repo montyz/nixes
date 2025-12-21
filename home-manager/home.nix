@@ -34,7 +34,6 @@
     pkgs.htmlq
     pkgs.jq
     pkgs.just
-    pkgs.logseq
     pkgs.lout
     pkgs.nodejs_22
     pkgs.noweb
